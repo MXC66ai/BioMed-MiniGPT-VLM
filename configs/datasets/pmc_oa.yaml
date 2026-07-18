@@ -6,13 +6,13 @@ datasets:
     build_info:
       annotations:
         train:
-          storage: D:/SDURA/MiniGPT-4/minigpt4/datasets/PMC-OA/train.jsonl
+          storage: D:/BioMed-MiniGPT-VLM/datasets/PMC-OA/train.jsonl
         val:
-          storage: D:/SDURA/MiniGPT-4/minigpt4/datasets/PMC-OA/valid.jsonl
+          storage: D:/BioMed-MiniGPT-VLM/datasets/PMC-OA/valid.jsonl
         test:
-          storage: D:/SDURA/MiniGPT-4/minigpt4/datasets/PMC-OA/test.jsonl
+          storage: D:/BioMed-MiniGPT-VLM/datasets/PMC-OA/test.jsonl
       images:
-        storage: D:/SDURA/MiniGPT-4/minigpt4/datasets/PMC-OA/images
+        storage: D:/BioMed-MiniGPT-VLM/datasets/PMC-OA/images
 
     vis_processor:
       train:
