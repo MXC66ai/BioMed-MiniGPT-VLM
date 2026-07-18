@@ -1,0 +1,28 @@
+datasets:
+  pmc_vqa:
+    data_type: images
+
+    build_info:
+      annotations:
+        train:
+          storage: ./minigpt4/datasets/PMC-VQA/Slake1.0/train.json
+        val:
+          storage: ./minigpt4/datasets/PMC-VQA/Slake1.0/validate.json
+        test:
+          storage: ./minigpt4/datasets/PMC-VQA/Slake1.0/test.json
+      images:
+        storage: ./minigpt4/datasets/PMC-VQA/Slake1.0
+#需替换成本地路径
+    vis_processor:
+      train:
+        name: "blip2_image_train"
+        image_size: 224
+      eval:
+        name: "blip2_image_eval"
+        image_size: 224
+
+    text_processor:
+      train:
+        name: "blip_caption"
+      eval:
+        name: "blip_caption"
