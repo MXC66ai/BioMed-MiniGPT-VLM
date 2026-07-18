@@ -8,7 +8,7 @@ model:
   prompt_template: '###Human: {} ###Assistant: '
 
   # Set to your Vicuna 7B path
-  llama_model: "D:/SDURA/MiniGPT-4/vicuna_7b"
+  llama_model: "../vicuna_7b"
 
   # Load stage1 checkpoint
   ckpt: "output/minigpt4_vicuna7b_biomedical_stage1/checkpoint_best.pth"
