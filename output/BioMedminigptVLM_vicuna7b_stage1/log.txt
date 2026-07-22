@@ -1,0 +1,272 @@
+{
+    "run": {
+        "task": "image_text_pretrain",
+        "lr_sched": "linear_warmup_cosine_lr",
+        "init_lr": 0.0001,
+        "min_lr": 8e-05,
+        "warmup_lr": 1e-06,
+        "weight_decay": 0.05,
+        "max_epoch": 10,
+        "num_workers": 0,
+        "warmup_steps": 500,
+        "iters_per_epoch": 500,
+        "seed": 42,
+        "output_dir": "output/minigpt4_vicuna7b_biomedical_stage1",
+        "amp": true,
+        "resume_ckpt_path": null,
+        "evaluate": false,
+        "train_splits": [
+            "train"
+        ],
+        "device": "cuda",
+        "world_size": 1,
+        "dist_url": "env://",
+        "distributed": false,
+        "wandb_log": false,
+        "job_name": "minigpt4_biomedical_stage1"
+    },
+    "model": {
+        "arch": "minigpt4",
+        "image_size": 224,
+        "drop_path_rate": 0,
+        "use_grad_checkpoint": false,
+        "vit_precision": "fp16",
+        "freeze_vit": true,
+        "freeze_qformer": true,
+        "num_query_token": 32,
+        "prompt": "",
+        "llama_model": "D:/SDURA/MiniGPT-4/vicuna_7b",
+        "model_type": "pretrain_vicuna0",
+        "max_txt_len": 160,
+        "end_sym": "###",
+        "prompt_path": "prompts/alignment.txt",
+        "prompt_template": "###Human: {} ###Assistant: ",
+        "ckpt": ""
+    },
+    "preprocess": {
+        "vis_processor": {
+            "train": {
+                "name": "blip2_image_train",
+                "image_size": 224
+            },
+            "eval": {
+                "name": "blip2_image_eval",
+                "image_size": 224
+            }
+        },
+        "text_processor": {
+            "train": {
+                "name": "blip_caption"
+            },
+            "eval": {
+                "name": "blip_caption"
+            }
+        }
+    },
+    "datasets": {
+        "biomedical_mixed": {
+            "data_type": "images",
+            "build_info": {
+                "annotations": {
+                    "train": {
+                        "storage": [
+                            "D:/SDURA/MiniGPT-4/minigpt4/datasets/PMC-OA/train.jsonl",
+                            "D:/SDURA/MiniGPT-4/minigpt4/datasets/PMC-VQA/Slake1.0/train.json"
+                        ],
+                        "dataset_types": [
+                            "pmc_oa",
+                            "pmc_vqa"
+                        ]
+                    },
+                    "val": {
+                        "storage": [
+                            "D:/SDURA/MiniGPT-4/minigpt4/datasets/PMC-OA/valid.jsonl",
+                            "D:/SDURA/MiniGPT-4/minigpt4/datasets/PMC-VQA/Slake1.0/validate.json"
+                        ],
+                        "dataset_types": [
+                            "pmc_oa",
+                            "pmc_vqa"
+                        ]
+                    },
+                    "test": {
+                        "storage": [
+                            "D:/SDURA/MiniGPT-4/minigpt4/datasets/PMC-OA/test.jsonl",
+                            "D:/SDURA/MiniGPT-4/minigpt4/datasets/PMC-VQA/Slake1.0/test.json"
+                        ],
+                        "dataset_types": [
+                            "pmc_oa",
+                            "pmc_vqa"
+                        ]
+                    }
+                },
+                "images": {
+                    "storage": [
+                        "D:/SDURA/MiniGPT-4/minigpt4/datasets/PMC-OA/images",
+                        "D:/SDURA/MiniGPT-4/minigpt4/datasets/PMC-VQA/Slake1.0"
+                    ]
+                }
+            },
+            "vis_processor": {
+                "train": {
+                    "name": "blip2_image_train",
+                    "image_size": 224
+                },
+                "eval": {
+                    "name": "blip2_image_eval",
+                    "image_size": 224
+                }
+            },
+            "text_processor": {
+                "train": {
+                    "name": "blip_caption"
+                },
+                "eval": {
+                    "name": "blip_caption"
+                }
+            },
+            "batch_size": 8,
+            "sample_ratio": 1
+        }
+    }
+}
+{
+    "run": {
+        "task": "image_text_pretrain",
+        "lr_sched": "linear_warmup_cosine_lr",
+        "init_lr": 0.0001,
+        "min_lr": 8e-05,
+        "warmup_lr": 1e-06,
+        "weight_decay": 0.05,
+        "max_epoch": 10,
+        "num_workers": 0,
+        "warmup_steps": 500,
+        "iters_per_epoch": 500,
+        "seed": 42,
+        "output_dir": "output/minigpt4_vicuna7b_biomedical_stage1",
+        "amp": true,
+        "resume_ckpt_path": null,
+        "evaluate": false,
+        "train_splits": [
+            "train"
+        ],
+        "device": "cuda",
+        "world_size": 1,
+        "dist_url": "env://",
+        "distributed": false,
+        "wandb_log": false,
+        "job_name": "minigpt4_biomedical_stage1"
+    },
+    "model": {
+        "arch": "minigpt4",
+        "image_size": 224,
+        "drop_path_rate": 0,
+        "use_grad_checkpoint": false,
+        "vit_precision": "fp16",
+        "freeze_vit": true,
+        "freeze_qformer": true,
+        "num_query_token": 32,
+        "prompt": "",
+        "llama_model": "D:/SDURA/MiniGPT-4/vicuna_7b",
+        "model_type": "pretrain_vicuna0",
+        "max_txt_len": 160,
+        "end_sym": "###",
+        "prompt_path": "prompts/alignment.txt",
+        "prompt_template": "###Human: {} ###Assistant: ",
+        "ckpt": ""
+    },
+    "preprocess": {
+        "vis_processor": {
+            "train": {
+                "name": "blip2_image_train",
+                "image_size": 224
+            },
+            "eval": {
+                "name": "blip2_image_eval",
+                "image_size": 224
+            }
+        },
+        "text_processor": {
+            "train": {
+                "name": "blip_caption"
+            },
+            "eval": {
+                "name": "blip_caption"
+            }
+        }
+    },
+    "datasets": {
+        "biomedical_mixed": {
+            "data_type": "images",
+            "build_info": {
+                "annotations": {
+                    "train": {
+                        "storage": [
+                            "D:/SDURA/MiniGPT-4/minigpt4/datasets/PMC-OA/train.jsonl",
+                            "D:/SDURA/MiniGPT-4/minigpt4/datasets/PMC-VQA/Slake1.0/train.json"
+                        ],
+                        "dataset_types": [
+                            "pmc_oa",
+                            "pmc_vqa"
+                        ]
+                    },
+                    "val": {
+                        "storage": [
+                            "D:/SDURA/MiniGPT-4/minigpt4/datasets/PMC-OA/valid.jsonl",
+                            "D:/SDURA/MiniGPT-4/minigpt4/datasets/PMC-VQA/Slake1.0/validate.json"
+                        ],
+                        "dataset_types": [
+                            "pmc_oa",
+                            "pmc_vqa"
+                        ]
+                    },
+                    "test": {
+                        "storage": [
+                            "D:/SDURA/MiniGPT-4/minigpt4/datasets/PMC-OA/test.jsonl",
+                            "D:/SDURA/MiniGPT-4/minigpt4/datasets/PMC-VQA/Slake1.0/test.json"
+                        ],
+                        "dataset_types": [
+                            "pmc_oa",
+                            "pmc_vqa"
+                        ]
+                    }
+                },
+                "images": {
+                    "storage": [
+                        "D:/SDURA/MiniGPT-4/minigpt4/datasets/PMC-OA/images",
+                        "D:/SDURA/MiniGPT-4/minigpt4/datasets/PMC-VQA/Slake1.0"
+                    ]
+                }
+            },
+            "vis_processor": {
+                "train": {
+                    "name": "blip2_image_train",
+                    "image_size": 224
+                },
+                "eval": {
+                    "name": "blip2_image_eval",
+                    "image_size": 224
+                }
+            },
+            "text_processor": {
+                "train": {
+                    "name": "blip_caption"
+                },
+                "eval": {
+                    "name": "blip_caption"
+                }
+            },
+            "batch_size": 8,
+            "sample_ratio": 1
+        }
+    }
+}
+{"train_lr": "0.000", "train_loss": "2.043"}
+{"train_lr": "0.000", "train_loss": "0.559"}
+{"train_lr": "0.000", "train_loss": "0.410"}
+{"train_lr": "0.000", "train_loss": "0.379"}
+{"train_lr": "0.000", "train_loss": "0.324"}
+{"train_lr": "0.000", "train_loss": "0.281"}
+{"train_lr": "0.000", "train_loss": "0.269"}
+{"train_lr": "0.000", "train_loss": "0.234"}
+{"train_lr": "0.000", "train_loss": "0.238"}
+{"train_lr": "0.000", "train_loss": "0.217"}
