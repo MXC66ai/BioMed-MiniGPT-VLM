@@ -1,0 +1,19 @@
+D:\HP\Mniconda3\envs\BioMed\lib\site-packages\accelerate\utils\torch_xla.py:18: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+┌───────────────────── Traceback (most recent call last) ─────────────────────┐
+│ in <module>:14                                                              │
+│                                                                             │
+│ D:\HP\Mniconda3\envs\BioMed\lib\json\__init__.py:293 in load                │
+│                                                                             │
+│   290 │   To use a custom ``JSONDecoder`` subclass, specify it with the ``c │
+│   291 │   kwarg; otherwise ``JSONDecoder`` is used.                         │
+│   292 │   """                                                               │
+│ > 293 │   return loads(fp.read(),                                           │
+│   294 │   │   cls=cls, object_hook=object_hook,                             │
+│   295 │   │   parse_float=parse_float, parse_int=parse_int,                 │
+│   296 │   │   parse_constant=parse_constant, object_pairs_hook=object_pairs │
+└─────────────────────────────────────────────────────────────────────────────┘
+UnicodeDecodeError: 'gbk' codec can't decode byte 0x80 in position 326775: 
+illegal multibyte sequence
+IMPORTS_OK
+VICUNA: True ['.gitattributes', 'config.json', 'generation_config.json', 'pytorch_model-00001-of-00002.bin', 'pytorch_model-00002-of-00002.bin', 'pytorch_model.bin.index.json', 'special_tokens_map.json', 'tokenizer.model', 'tokenizer_config.json']

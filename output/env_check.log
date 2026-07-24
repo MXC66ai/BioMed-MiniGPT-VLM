@@ -1,0 +1,174 @@
+D:\HP\Mniconda3\envs\BioMed\lib\site-packages\accelerate\utils\torch_xla.py:18: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+D:\HP\Mniconda3\envs\BioMed\lib\site-packages\bitsandbytes\cuda_setup\main.py:136: UserWarning: WARNING: The following directories listed in your path were found to be non-existent: {WindowsPath('//agent-gw.kimi.com/coding/v1/mcp'), WindowsPath('https')}
+  warn(msg)
+D:\HP\Mniconda3\envs\BioMed\lib\site-packages\bitsandbytes\cuda_setup\main.py:136: UserWarning: WARNING: The following directories listed in your path were found to be non-existent: {WindowsPath('https'), WindowsPath('//agent-gw.kimi.com/coding/')}
+  warn(msg)
+D:\HP\Mniconda3\envs\BioMed\lib\site-packages\bitsandbytes\cuda_setup\main.py:136: UserWarning: WARNING: The following directories listed in your path were found to be non-existent: {WindowsPath('/usr/local/cuda/lib64')}
+  warn(msg)
+D:\HP\Mniconda3\envs\BioMed\lib\site-packages\bitsandbytes\cuda_setup\main.py:136: UserWarning: WARNING: No libcudart.so found! Install CUDA or the cudatoolkit package (anaconda)!
+  warn(msg)
+D:\HP\Mniconda3\envs\BioMed\lib\site-packages\bitsandbytes\cuda_setup\main.py:136: UserWarning: WARNING: No GPU detected! Check your CUDA paths. Proceeding to load CPU-only library...
+  warn(msg)
+┌───────────────────── Traceback (most recent call last) ─────────────────────┐
+│ in <module>:3                                                               │
+│                                                                             │
+│ D:\SDURA\MiniGPT-4\minigpt4\__init__.py:16 in <module>                      │
+│                                                                             │
+│   13 from minigpt4.common.registry import registry                          │
+│   14                                                                        │
+│   15 from minigpt4.datasets.builders import *                               │
+│ > 16 from minigpt4.models import *                                          │
+│   17 from minigpt4.processors import *                                      │
+│   18 from minigpt4.tasks import *                                           │
+│   19                                                                        │
+│                                                                             │
+│ D:\SDURA\MiniGPT-4\minigpt4\models\__init__.py:13 in <module>               │
+│                                                                             │
+│    10 from omegaconf import OmegaConf                                       │
+│    11                                                                       │
+│    12 from minigpt4.common.registry import registry                         │
+│ >  13 from minigpt4.models.base_model import BaseModel                      │
+│    14 from minigpt4.models.minigpt_base import MiniGPTBase                  │
+│    15 from minigpt4.models.minigpt4 import MiniGPT4                         │
+│    16 from minigpt4.models.minigpt_v2 import MiniGPTv2                      │
+│                                                                             │
+│ D:\SDURA\MiniGPT-4\minigpt4\models\base_model.py:17 in <module>             │
+│                                                                             │
+│    14 import torch                                                          │
+│    15 import torch.nn as nn                                                 │
+│    16 from transformers import LlamaTokenizer                               │
+│ >  17 from peft import (                                                    │
+│    18 │   LoraConfig,                                                       │
+│    19 │   get_peft_model,                                                   │
+│    20 │   prepare_model_for_int8_training,                                  │
+│                                                                             │
+│ D:\HP\Mniconda3\envs\BioMed\lib\site-packages\peft\__init__.py:22 in        │
+│ <module>                                                                    │
+│                                                                             │
+│   19                                                                        │
+│   20 __version__ = "0.2.0"                                                  │
+│   21                                                                        │
+│ > 22 from .mapping import MODEL_TYPE_TO_PEFT_MODEL_MAPPING, PEFT_TYPE_TO_CO │
+│   23 from .peft_model import (                                              │
+│   24 │   PeftModel,                                                         │
+│   25 │   PeftModelForCausalLM,                                              │
+│                                                                             │
+│ D:\HP\Mniconda3\envs\BioMed\lib\site-packages\peft\mapping.py:16 in         │
+│ <module>                                                                    │
+│                                                                             │
+│    13 # See the License for the specific language governing permissions and │
+│    14 # limitations under the License.                                      │
+│    15                                                                       │
+│ >  16 from .peft_model import (                                             │
+│    17 │   PeftModel,                                                        │
+│    18 │   PeftModelForCausalLM,                                             │
+│    19 │   PeftModelForSeq2SeqLM,                                            │
+│                                                                             │
+│ D:\HP\Mniconda3\envs\BioMed\lib\site-packages\peft\peft_model.py:31 in      │
+│ <module>                                                                    │
+│                                                                             │
+│    28 from transformers.modeling_outputs import SequenceClassifierOutput, T │
+│    29 from transformers.utils import PushToHubMixin                         │
+│    30                                                                       │
+│ >  31 from .tuners import LoraModel, PrefixEncoder, PromptEmbedding, Prompt │
+│    32 from .utils import (                                                  │
+│    33 │   TRANSFORMERS_MODELS_TO_PREFIX_TUNING_POSTPROCESS_MAPPING,         │
+│    34 │   WEIGHTS_NAME,                                                     │
+│                                                                             │
+│ D:\HP\Mniconda3\envs\BioMed\lib\site-packages\peft\tuners\__init__.py:20 in │
+│ <module>                                                                    │
+│                                                                             │
+│   17 # See the License for the specific language governing permissions and  │
+│   18 # limitations under the License.                                       │
+│   19                                                                        │
+│ > 20 from .lora import LoraConfig, LoraModel                                │
+│   21 from .p_tuning import PromptEncoder, PromptEncoderConfig, PromptEncode │
+│   22 from .prefix_tuning import PrefixEncoder, PrefixTuningConfig           │
+│   23 from .prompt_tuning import PromptEmbedding, PromptTuningConfig, Prompt │
+│                                                                             │
+│ D:\HP\Mniconda3\envs\BioMed\lib\site-packages\peft\tuners\lora.py:36 in     │
+│ <module>                                                                    │
+│                                                                             │
+│    33                                                                       │
+│    34                                                                       │
+│    35 if is_bnb_available():                                                │
+│ >  36 │   import bitsandbytes as bnb                                        │
+│    37                                                                       │
+│    38                                                                       │
+│    39 @dataclass                                                            │
+│                                                                             │
+│ D:\HP\Mniconda3\envs\BioMed\lib\site-packages\bitsandbytes\__init__.py:7 in │
+│ <module>                                                                    │
+│                                                                             │
+│    4 # LICENSE file in the root directory of this source tree.              │
+│    5                                                                        │
+│    6 from . import cuda_setup, utils                                        │
+│ >  7 from .autograd._functions import (                                     │
+│    8 │   MatmulLtState,                                                     │
+│    9 │   bmm_cublas,                                                        │
+│   10 │   matmul,                                                            │
+│                                                                             │
+│ D:\HP\Mniconda3\envs\BioMed\lib\site-packages\bitsandbytes\autograd\__init_ │
+│ _.py:1 in <module>                                                          │
+│                                                                             │
+│ > 1 from ._functions import undo_layout, get_inverse_transform_indices      │
+│   2                                                                         │
+│                                                                             │
+│ D:\HP\Mniconda3\envs\BioMed\lib\site-packages\bitsandbytes\autograd\_functi │
+│ ons.py:9 in <module>                                                        │
+│                                                                             │
+│     6                                                                       │
+│     7 import torch                                                          │
+│     8                                                                       │
+│ >   9 import bitsandbytes.functional as F                                   │
+│    10                                                                       │
+│    11                                                                       │
+│    12 # math.prod not compatible with python < 3.8                          │
+│                                                                             │
+│ D:\HP\Mniconda3\envs\BioMed\lib\site-packages\bitsandbytes\functional.py:17 │
+│ in <module>                                                                 │
+│                                                                             │
+│     14 from typing import Tuple                                             │
+│     15 from torch import Tensor                                             │
+│     16                                                                      │
+│ >   17 from .cextension import COMPILED_WITH_CUDA, lib                      │
+│     18                                                                      │
+│     19                                                                      │
+│     20 # math.prod not compatible with python < 3.8                         │
+│                                                                             │
+│ D:\HP\Mniconda3\envs\BioMed\lib\site-packages\bitsandbytes\cextension.py:22 │
+│ in <module>                                                                 │
+│                                                                             │
+│   19 │   if lib is None and torch.cuda.is_available():                      │
+│   20 │   │   CUDASetup.get_instance().generate_instructions()               │
+│   21 │   │   CUDASetup.get_instance().print_log_stack()                     │
+│ > 22 │   │   raise RuntimeError('''                                         │
+│   23 │   │   CUDA Setup failed despite GPU being available. Inspect the CUD │
+│   24 │   │   If you cannot find any issues and suspect a bug, please open a │
+│   25 │   │   https://github.com/TimDettmers/bitsandbytes/issues''')         │
+└─────────────────────────────────────────────────────────────────────────────┘
+RuntimeError: 
+        CUDA Setup failed despite GPU being available. Inspect the CUDA SETUP 
+outputs above to fix your environment!
+        If you cannot find any issues and suspect a bug, please open an issue 
+with detals about your environment:
+        https://github.com/TimDettmers/bitsandbytes/issues
+
+===================================BUG REPORT===================================
+Welcome to bitsandbytes. For bug reports, please submit your error trace to: https://github.com/TimDettmers/bitsandbytes/issues
+================================================================================
+CUDA_SETUP: WARNING! libcudart.so not found in any environmental path. Searching /usr/local/cuda/lib64...
+CUDA SETUP: WARNING! libcuda.so not found! Do you have a CUDA driver installed? If you are on a cluster, make sure you are on a CUDA machine!
+CUDA SETUP: Loading binary D:\HP\Mniconda3\envs\BioMed\lib\site-packages\bitsandbytes\libbitsandbytes_cpu.so...
+argument of type 'WindowsPath' is not iterable
+CUDA_SETUP: WARNING! libcudart.so not found in any environmental path. Searching /usr/local/cuda/lib64...
+CUDA SETUP: WARNING! libcuda.so not found! Do you have a CUDA driver installed? If you are on a cluster, make sure you are on a CUDA machine!
+CUDA SETUP: Loading binary D:\HP\Mniconda3\envs\BioMed\lib\site-packages\bitsandbytes\libbitsandbytes_cpu.so...
+argument of type 'WindowsPath' is not iterable
+CUDA SETUP: Problem: The main issue seems to be that the main CUDA library was not detected.
+CUDA SETUP: Solution 1): Your paths are probably not up-to-date. You can update them via: sudo ldconfig.
+CUDA SETUP: Solution 2): If you do not have sudo rights, you can do the following:
+CUDA SETUP: Solution 2a): Find the cuda library via: find / -name libcuda.so 2>/dev/null
+CUDA SETUP: Solution 2b): Once the library is found add it to the LD_LIBRARY_PATH: export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:FOUND_PATH_FROM_2a
+CUDA SETUP: Solution 2c): For a permanent solution add the export from 2b into your .bashrc file, located at ~/.bashrc
