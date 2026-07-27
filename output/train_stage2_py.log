@@ -43,8 +43,8 @@ Not using distributed mode
                     "pmc_vqa"
                 ],
                 "storage": [
-                    "D:/SDURA/MiniGPT-4/minigpt4/datasets/PMC-OA/test.jsonl",
-                    "D:/SDURA/MiniGPT-4/minigpt4/datasets/PMC-VQA/Slake1.0/test.json"
+                    "BioMed-MiniGPT-VLM/datasets/PMC-OA/test.jsonl",
+                    "BioMed-MiniGPT-VLM/datasets/PMC-VQA/Slake1.0/test.json"
                 ]
             },
             "train": {
@@ -53,8 +53,8 @@ Not using distributed mode
                     "pmc_vqa"
                 ],
                 "storage": [
-                    "D:/SDURA/MiniGPT-4/minigpt4/datasets/PMC-OA/train.jsonl",
-                    "D:/SDURA/MiniGPT-4/minigpt4/datasets/PMC-VQA/Slake1.0/train.json"
+                    "BioMed-MiniGPT-VLM/datasets/PMC-OA/train.jsonl",
+                    "BioMed-MiniGPT-VLM/datasets/PMC-VQA/Slake1.0/train.json"
                 ]
             },
             "val": {
@@ -63,15 +63,15 @@ Not using distributed mode
                     "pmc_vqa"
                 ],
                 "storage": [
-                    "D:/SDURA/MiniGPT-4/minigpt4/datasets/PMC-OA/valid.jsonl",
-                    "D:/SDURA/MiniGPT-4/minigpt4/datasets/PMC-VQA/Slake1.0/validate.json"
+                    "BioMed-MiniGPT-VLM/datasets/PMC-OA/valid.jsonl",
+                    "BioMed-MiniGPT-VLM/datasets/PMC-VQA/Slake1.0/validate.json"
                 ]
             }
         },
         "images": {
             "storage": [
-                "D:/SDURA/MiniGPT-4/minigpt4/datasets/PMC-OA/images",
-                "D:/SDURA/MiniGPT-4/minigpt4/datasets/PMC-VQA/Slake1.0"
+                "BioMed-MiniGPT-VLM/datasets/PMC-OA/images",
+                "BioMed-MiniGPT-VLM/datasets/PMC-VQA/Slake1.0"
             ]
         }
     },
@@ -106,7 +106,7 @@ Not using distributed mode
     "freeze_qformer": true,
     "freeze_vit": true,
     "image_size": 224,
-    "llama_model": "D:/SDURA/MiniGPT-4/vicuna_7b",
+    "llama_model": "BioMed-MiniGPT-VLM/vicuna_7b",
     "max_txt_len": 160,
     "model_type": "pretrain_vicuna0",
     "num_query_token": 32,
@@ -117,14 +117,18 @@ Not using distributed mode
     "vit_precision": "fp16"
 }
 2026-07-21 23:46:36,509 [INFO] Building datasets...
-[WARNING] [BioMed MiniGPT VLM] No valid images found in D:/SDURA/MiniGPT-4/minigpt4/datasets/PMC-OA/images. Please ensure images are downloaded.
+[WARNING] [BioMed MiniGPT VLM] No valid images found in BioMed-MiniGPT-VLM/datasets/PMC-OA/images. Please ensure images are downloaded.
 [INFO] [BioMed MiniGPT VLM] PMC-VQA: 9835/9835 samples have valid images.
-[WARNING] [BioMed MiniGPT VLM] No valid images found in D:/SDURA/MiniGPT-4/minigpt4/datasets/PMC-OA/images. Please ensure images are downloaded.
+[WARNING] [BioMed MiniGPT VLM] No valid images found in BioMed-MiniGPT-VLM/datasets/PMC-OA/images. Please ensure images are downloaded.
 [INFO] [BioMed MiniGPT VLM] PMC-VQA: 2099/2099 samples have valid images.
 [INFO] [BioMed MiniGPT VLM] PMC-OA: 107/164651 samples have valid images.
 [INFO] [BioMed MiniGPT VLM] PMC-VQA: 2094/2094 samples have valid images.
 2026-07-21 23:46:43,711 [INFO] Loading LLAMA
-Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:14<00:14, 14.29s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:19<00:00,  8.87s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:19<00:00,  9.69s/it]
+
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]
+Loading checkpoint shards:  50%|█████     | 1/2 [00:14<00:14, 14.29s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:19<00:00,  8.87s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:19<00:00,  9.69s/it]
 2026-07-21 23:47:03,283 [INFO] Loading LLAMA Done
 2026-07-21 23:47:03,284 [INFO] Loading VIT
 2026-07-21 23:47:13,574 [INFO] freeze vision encoder
@@ -160,7 +164,7 @@ Loading Q-Former Done
 Load 4 training prompts
 Prompt Example 
 ###Human: <Img><ImageHere></Img> Describe this image in detail. ###Assistant: 
-Load MiniGPT-4 Checkpoint: minigpt4/output/minigpt4_vicuna7b_biomedical_stage1/20260718092/checkpoint_9.pth
+Load MiniGPT-4 Checkpoint: BioMed-MiniGPT-VLM/output/minigpt4_vicuna7b_biomedical_stage1/20260718092/checkpoint_9.pth
 2026-07-21 23:49:38,677 [INFO] Start training
 2026-07-21 23:50:32,853 [INFO] dataset_ratios not specified, datasets will be concatenated (map-style datasets) or chained (webdataset.DataPipeline).
 2026-07-21 23:50:32,863 [INFO] Loaded 9835 records for train split from the dataset.
@@ -170,12 +174,12 @@ batch sizes [[4], [4], [4]]
 llama_proj.weight
 llama_proj.bias
 2026-07-21 23:50:32,910 [INFO] number of trainable parameters: 3149824
-D:\SDURA\MiniGPT-4\minigpt4\runners\runner_base.py:137: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+BioMed-MiniGPT-VLM\runners\runner_base.py:137: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
   self._scaler = torch.cuda.amp.GradScaler()
 2026-07-21 23:50:32,940 [INFO] Start training epoch 0, 200 iters per inner epoch.
-D:\SDURA\MiniGPT-4\minigpt4\tasks\base_task.py:220: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+BioMed-MiniGPT-VLM\tasks\base_task.py:220: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
   with torch.cuda.amp.autocast(enabled=use_amp):
-D:\SDURA\MiniGPT-4\minigpt4\models\base_model.py:137: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+BioMed-MiniGPT-VLM\models\base_model.py:137: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
   return torch.cuda.amp.autocast(dtype=dtype)
 Train: data epoch: [0]  [  0/200]  eta: 1:45:40  lr: 0.000001  loss: 0.0788  time: 31.7042  data: 0.0000  max mem: 17002
 Train: data epoch: [0]  [ 50/200]  eta: 1:14:03  lr: 0.000008  loss: 0.0725  time: 29.9411  data: 0.0000  max mem: 18148
@@ -185,7 +189,7 @@ Train: data epoch: [0]  [199/200]  eta: 0:00:28  lr: 0.000030  loss: 0.3380  tim
 Train: data epoch: [0] Total time: 1:34:28 (28.3410 s / it)
 2026-07-22 01:25:01,143 [INFO] Averaged stats: lr: 0.0000  loss: 0.1879
 2026-07-22 01:25:01,157 [INFO] No validation splits found.
-2026-07-22 01:25:01,187 [INFO] Saving checkpoint at epoch 0 to D:\SDURA\MiniGPT-4\minigpt4\output\minigpt4_vicuna7b_biomedical_stage2\20260721234\checkpoint_0.pth.
+2026-07-22 01:25:01,187 [INFO] Saving checkpoint at epoch 0 to BioMed-MiniGPT-VLM\output\minigpt4_vicuna7b_biomedical_stage2\20260721234\checkpoint_0.pth.
 2026-07-22 01:25:01,264 [INFO] Start training
 2026-07-22 01:25:01,278 [INFO] Start training epoch 1, 200 iters per inner epoch.
 Train: data epoch: [1]  [  0/200]  eta: 1:28:50  lr: 0.000030  loss: 0.1486  time: 26.6515  data: 0.0000  max mem: 18192
@@ -196,7 +200,7 @@ Train: data epoch: [1]  [199/200]  eta: 0:00:28  lr: 0.000028  loss: 0.0747  tim
 Train: data epoch: [1] Total time: 1:33:26 (28.0313 s / it)
 2026-07-22 02:58:27,537 [INFO] Averaged stats: lr: 0.0000  loss: 0.1735
 2026-07-22 02:58:27,546 [INFO] No validation splits found.
-2026-07-22 02:58:27,564 [INFO] Saving checkpoint at epoch 1 to D:\SDURA\MiniGPT-4\minigpt4\output\minigpt4_vicuna7b_biomedical_stage2\20260721234\checkpoint_1.pth.
+2026-07-22 02:58:27,564 [INFO] Saving checkpoint at epoch 1 to BioMed-MiniGPT-VLM\output\minigpt4_vicuna7b_biomedical_stage2\20260721234\checkpoint_1.pth.
 2026-07-22 02:58:27,619 [INFO] Start training
 2026-07-22 02:58:27,631 [INFO] Start training epoch 2, 200 iters per inner epoch.
 Train: data epoch: [2]  [  0/200]  eta: 1:35:36  lr: 0.000028  loss: 0.2602  time: 28.6816  data: 0.0000  max mem: 18936
@@ -207,7 +211,7 @@ Train: data epoch: [2]  [199/200]  eta: 0:00:28  lr: 0.000026  loss: 0.0363  tim
 Train: data epoch: [2] Total time: 1:35:08 (28.5401 s / it)
 2026-07-22 04:33:35,656 [INFO] Averaged stats: lr: 0.0000  loss: 0.1801
 2026-07-22 04:33:35,660 [INFO] No validation splits found.
-2026-07-22 04:33:35,675 [INFO] Saving checkpoint at epoch 2 to D:\SDURA\MiniGPT-4\minigpt4\output\minigpt4_vicuna7b_biomedical_stage2\20260721234\checkpoint_2.pth.
+2026-07-22 04:33:35,675 [INFO] Saving checkpoint at epoch 2 to BioMed-MiniGPT-VLM\output\minigpt4_vicuna7b_biomedical_stage2\20260721234\checkpoint_2.pth.
 2026-07-22 04:33:35,742 [INFO] Start training
 2026-07-22 04:33:35,760 [INFO] Start training epoch 3, 200 iters per inner epoch.
 Train: data epoch: [3]  [  0/200]  eta: 1:45:38  lr: 0.000026  loss: 0.0288  time: 31.6939  data: 0.0000  max mem: 18936
@@ -218,7 +222,7 @@ Train: data epoch: [3]  [199/200]  eta: 0:00:28  lr: 0.000023  loss: 0.1595  tim
 Train: data epoch: [3] Total time: 1:34:27 (28.3359 s / it)
 2026-07-22 06:08:02,938 [INFO] Averaged stats: lr: 0.0000  loss: 0.1653
 2026-07-22 06:08:02,941 [INFO] No validation splits found.
-2026-07-22 06:08:02,957 [INFO] Saving checkpoint at epoch 3 to D:\SDURA\MiniGPT-4\minigpt4\output\minigpt4_vicuna7b_biomedical_stage2\20260721234\checkpoint_3.pth.
+2026-07-22 06:08:02,957 [INFO] Saving checkpoint at epoch 3 to BioMed-MiniGPT-VLM\output\minigpt4_vicuna7b_biomedical_stage2\20260721234\checkpoint_3.pth.
 2026-07-22 06:08:02,997 [INFO] Start training
 2026-07-22 06:08:03,011 [INFO] Start training epoch 4, 200 iters per inner epoch.
 Train: data epoch: [4]  [  0/200]  eta: 1:31:05  lr: 0.000023  loss: 0.2668  time: 27.3277  data: 0.0000  max mem: 18936
@@ -229,7 +233,7 @@ Train: data epoch: [4]  [199/200]  eta: 0:00:28  lr: 0.000020  loss: 0.1573  tim
 Train: data epoch: [4] Total time: 1:36:35 (28.9769 s / it)
 2026-07-22 07:44:38,398 [INFO] Averaged stats: lr: 0.0000  loss: 0.1524
 2026-07-22 07:44:38,403 [INFO] No validation splits found.
-2026-07-22 07:44:38,417 [INFO] Saving checkpoint at epoch 4 to D:\SDURA\MiniGPT-4\minigpt4\output\minigpt4_vicuna7b_biomedical_stage2\20260721234\checkpoint_4.pth.
+2026-07-22 07:44:38,417 [INFO] Saving checkpoint at epoch 4 to BioMed-MiniGPT-VLM\output\minigpt4_vicuna7b_biomedical_stage2\20260721234\checkpoint_4.pth.
 2026-07-22 07:44:38,470 [INFO] Start training
 2026-07-22 07:44:38,483 [INFO] Start training epoch 5, 200 iters per inner epoch.
 Train: data epoch: [5]  [  0/200]  eta: 1:52:56  lr: 0.000020  loss: 0.2770  time: 33.8805  data: 0.0000  max mem: 18961
@@ -240,7 +244,7 @@ Train: data epoch: [5]  [199/200]  eta: 0:00:29  lr: 0.000017  loss: 0.0240  tim
 Train: data epoch: [5] Total time: 1:39:01 (29.7096 s / it)
 2026-07-22 09:23:40,395 [INFO] Averaged stats: lr: 0.0000  loss: 0.1532
 2026-07-22 09:23:40,408 [INFO] No validation splits found.
-2026-07-22 09:23:40,434 [INFO] Saving checkpoint at epoch 5 to D:\SDURA\MiniGPT-4\minigpt4\output\minigpt4_vicuna7b_biomedical_stage2\20260721234\checkpoint_5.pth.
+2026-07-22 09:23:40,434 [INFO] Saving checkpoint at epoch 5 to BioMed-MiniGPT-VLM\output\minigpt4_vicuna7b_biomedical_stage2\20260721234\checkpoint_5.pth.
 2026-07-22 09:23:40,493 [INFO] Start training
 2026-07-22 09:23:40,519 [INFO] Start training epoch 6, 200 iters per inner epoch.
 Train: data epoch: [6]  [  0/200]  eta: 1:33:49  lr: 0.000017  loss: 0.0375  time: 28.1466  data: 0.0000  max mem: 18961
